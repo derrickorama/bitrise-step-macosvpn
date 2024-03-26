@@ -1,0 +1,60 @@
+#
+# A couple of useful guides & docs:
+#
+# - Main Bitrise CLI docs: https://github.com/bitrise-io/bitrise/tree/master/_docs
+# - Step Development Guideline: https://github.com/bitrise-io/bitrise/blob/master/_docs/step-development-guideline.md
+# - Bitrise.yml format spec: https://github.com/bitrise-io/bitrise/blob/master/_docs/bitrise-yml-format-spec.md
+# - Bitrise docs: http://devcenter.bitrise.io/
+# - Bitrise CLI guides: http://devcenter.bitrise.io/bitrise-cli/
+
+title: |-
+  macosvpn
+summary: |
+  Connect to a VPN using macosvpn
+description: |
+  Connects to a VPN using macosvpn and some simple configurations.
+website: https://github.com/zubiecar/bitrise-step-macosvpn
+source_code_url: https://github.com/zubiecar/bitrise-step-macosvpn
+support_url: https://github.com/zubiecar/bitrise-step-macosvpn/issues
+
+type_tags:
+  - utility
+
+# These properties define whether a Step is run in a given Workflow or not.
+# You can find more information about this in the documentation here:
+# https://devcenter.bitrise.io/en/steps-and-workflows/developing-your-own-bitrise-step/developing-a-new-step.html#setting-conditions-for-running-the-step
+#
+# is_always_run: false
+# is_skippable: false
+# run_if: ""
+
+# Use the `deps` property to declare dependencies that you can fetch from an OS dependency manager.
+# You can find more information about this in the documentation here:
+# https://devcenter.bitrise.io/en/steps-and-workflows/developing-your-own-bitrise-step/developing-a-new-step.html#submodules-and-step-dependencies
+#
+deps:
+  brew:
+  - name: macosvpn
+
+
+toolkit:
+  bash:
+    entry_file: step.sh
+
+
+inputs:
+  - vpn_endpoint:
+    opts:
+      title: "VPN Endpoint"
+      summary: The host/IP of the VPN
+      is_required: true
+
+outputs:
+  - EXAMPLE_STEP_OUTPUT:
+    opts:
+      title: "Example Step Output"
+      summary: Summary. No more than 2-3 sentences.
+      description: |
+        Description of this output.
+
+        Can be Markdown formatted text.
