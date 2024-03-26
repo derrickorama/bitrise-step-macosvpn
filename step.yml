@@ -43,18 +43,27 @@ toolkit:
 
 
 inputs:
-  - vpn_endpoint:
+  - vpn_endpoint: "$VPN_ENDPOINT"
     opts:
       title: "VPN Endpoint"
       summary: The host/IP of the VPN
       is_required: true
 
-outputs:
-  - EXAMPLE_STEP_OUTPUT:
+  - vpn_user_name: "$VPN_USERNAME"
     opts:
-      title: "Example Step Output"
-      summary: Summary. No more than 2-3 sentences.
-      description: |
-        Description of this output.
+      title: "VPN Username"
+      summary: Your VPN username
+      is_required: true
 
-        Can be Markdown formatted text.
+  - vpn_password: "$VPN_PASSWORD"
+    opts:
+      title: "VPN Password"
+      summary: Your VPN password
+      is_required: true
+
+  - vpn_shared_secret: "$VPN_SHARED_SECRET"
+    opts:
+      title: "VPN Shared Secret"
+      summary: Your VPN shared secret
+      is_required: true
+
