@@ -28,11 +28,10 @@ function poll_until_connected () {
 }
 
 if poll_until_connected "Default"; then
+    envman add --key MACOSVPN_CONFIGURED --value "yes"
     echo "Connected to Default."
     exit 0
 else
     echo "Timed out while connecting to VPN."
     exit 1
 fi
-
-envman add --key MACOSVPN_CONFIGURED --value "yes"
