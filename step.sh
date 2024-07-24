@@ -34,3 +34,5 @@ else
     echo "Timed out while connecting to VPN."
     exit 1
 fi
+
+envman add --key MACOSVPN_CONFIGURED --value "yes"

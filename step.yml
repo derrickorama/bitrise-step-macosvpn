@@ -36,11 +36,9 @@ deps:
   brew:
   - name: macosvpn
 
-
 toolkit:
   bash:
     entry_file: step.sh
-
 
 inputs:
   - vpn_endpoint: "$VPN_ENDPOINT"
@@ -67,3 +65,8 @@ inputs:
       summary: Your VPN shared secret
       is_required: true
 
+outputs:
+  - MACOSVPN_CONFIGURED:
+    opts:
+      title: VPN connection success flag
+      summary: Variable that will be set to "yes" when VPN successfully connects.
